@@ -5,46 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy 2nd Anniversary, Christeena 💖</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes floatDown {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(110vh) translateX(40px) rotate(540deg); opacity: 0; }
+    }
+    .petal {
+      position: fixed;
+      top: -10vh;
+      pointer-events: none;
+      animation: floatDown linear infinite;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-br from-pink-100 via-rose-50 to-purple-100 min-h-screen overflow-x-hidden relative pb-16">
-  <div class="absolute inset-0 pointer-events-none">
-    <span class="absolute text-pink-300 text-3xl animate-pulse" style="left:10%; top:10%;">❤</span>
-    <span class="absolute text-pink-300 text-2xl animate-pulse" style="left:80%; top:15%;">❤</span>
-    <span class="absolute text-pink-300 text-4xl animate-pulse" style="left:20%; top:70%;">❤</span>
-    <span class="absolute text-pink-300 text-3xl animate-pulse" style="left:70%; top:80%;">❤</span>
-  </div>
+  <div id="petals"></div>
 
-  <div class="max-w-5xl mx-auto px-6 py-12 relative z-10">
-    <div class="text-center mb-12">
-      <h1 class="text-5xl md:text-7xl font-bold text-rose-600 mb-4">Happy 2nd Anniversary, Christeena 💞</h1>
-      <p class="text-xl md:text-2xl text-gray-700">Two years since the universe quietly introduced me to you.</p>
-      <p class="mt-4 text-lg text-gray-600">Since that day, you’ve found a place in my heart forever. 💖</p>
-      <p id="counter" class="mt-6 text-3xl font-bold text-rose-500"></p>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 relative z-10">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-rose-600 leading-tight">
+        Happy 2nd Anniversary, Christeena 💞
+      </h1>
+      <p class="text-base sm:text-lg md:text-2xl text-gray-700 mt-4">
+        Two years since the universe quietly introduced me to you.
+      </p>
+      <p class="mt-3 text-sm sm:text-base md:text-lg text-gray-600">
+        Since that day, you’ve found a place in my heart forever. 💖
+      </p>
+      <p id="counter" class="mt-6 text-lg sm:text-2xl md:text-3xl font-bold text-rose-500 leading-relaxed break-words"></p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="bg-white/70 rounded-3xl shadow-xl p-8">
-        <h2 class="text-3xl font-semibold text-rose-500 mb-4">You are My ...</h2>
-        <p class="text-gray-700 leading-8">You are my first thought in the morning, my last thought at night, and everything in between. 💖</p>
-        <button onclick="showMessage()" class="mt-6 px-6 py-3 rounded-2xl bg-rose-500 text-white font-semibold shadow-lg">Click for Secret Message 💌</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+      <div class="bg-white/70 rounded-3xl shadow-xl p-6 md:p-8 backdrop-blur-sm">
+        <h2 class="text-2xl md:text-3xl font-semibold text-rose-500 mb-4">You are My ...</h2>
+        <p class="text-gray-700 leading-8 text-base md:text-lg">
+          You are my first thought in the morning, my last thought at night, and everything in between. 💖
+        </p>
+        <button onclick="showMessage()" class="mt-6 w-full sm:w-auto px-6 py-3 rounded-2xl bg-rose-500 text-white font-semibold shadow-lg">
+          Click for Secret Message 💌
+        </button>
       </div>
 
-      <div class="bg-white/70 rounded-3xl shadow-xl p-8">
-        <h2 class="text-3xl font-semibold text-purple-500 mb-4">Two years back on this day 📅</h2>
-        <div class="space-y-4">
-          <div class="p-4 rounded-2xl bg-pink-50 shadow">I saw the magic in your eyes ✨</div>
-          <div class="p-4 rounded-2xl bg-pink-50 shadow">The shine of your smile 🌟</div>
-          <div class="p-4 rounded-2xl bg-pink-50 shadow">A beauty I had never seen before 💫</div>
-          <div class="p-4 rounded-2xl bg-pink-50 shadow">And something inside me said—you’re mine 💖</div>
+      <div class="bg-white/70 rounded-3xl shadow-xl p-6 md:p-8 backdrop-blur-sm">
+        <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Two years back on this day 📅</h2>
+        <div class="space-y-3">
+          <div class="p-4 rounded-2xl bg-pink-50 shadow text-sm sm:text-base">I saw the magic in your eyes ✨</div>
+          <div class="p-4 rounded-2xl bg-pink-50 shadow text-sm sm:text-base">The shine of your smile 🌟</div>
+          <div class="p-4 rounded-2xl bg-pink-50 shadow text-sm sm:text-base">A beauty I had never seen before 💫</div>
+          <div class="p-4 rounded-2xl bg-pink-50 shadow text-sm sm:text-base">And something inside me said, you’re mine 💖</div>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 bg-white/70 rounded-3xl shadow-xl p-10 text-center">
-      <h2 class="text-4xl font-bold text-rose-500 mb-4">For My Soulmate🌹</h2>
+    <div class="mt-10 md:mt-12 bg-white/70 rounded-3xl shadow-xl p-6 md:p-10 text-center backdrop-blur-sm">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-rose-500 mb-4">For My Soulmate 🌹</h2>
       <details class="mt-6 cursor-pointer">
-        <summary class="text-rose-500 font-semibold">A hidden final line 💌</summary>
-        <p class="mt-3 text-lg text-gray-700">I love you more every day 💖</p>
+        <summary class="text-rose-500 font-semibold text-base md:text-lg">A hidden final line 💌</summary>
+        <p class="mt-3 text-base md:text-lg text-gray-700">I love you more every day 💖</p>
       </details>
     </div>
   </div>
@@ -58,13 +77,28 @@
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-      document.getElementById("counter").innerText = `${days} days • ${hours} hours • ${minutes} minutes • ${seconds} seconds with You 💖`;
+      document.getElementById("counter").innerText = `${days} days • ${hours} hrs • ${minutes} mins • ${seconds} secs with You 💖`;
     }
 
     function showMessage() {
-      alert("you are the most beautiful chapter of my life ❤️");
+      alert("You are the most beautiful chapter of my life ❤️");
     }
 
+    function createPetals() {
+      const container = document.getElementById('petals');
+      for (let i = 0; i < 35; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.innerText = '🌹';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (4 + Math.random() * 4) + 's';
+        petal.style.fontSize = (16 + Math.random() * 20) + 'px';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(petal);
+      }
+    }
+
+    createPetals();
     updateCounter();
     setInterval(updateCounter, 1000);
   </script>
